@@ -6,9 +6,10 @@ from rest_framework.response import Response
 from .models import Item
 from .serializers import ItemSerializer
 from rest_framework import status
-
+from rest_framework.permissions import IsAuthenticated
 
 class ItemsView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         items = Item.objects.all()
         serializer = ItemSerializer(items, many=True)
@@ -22,6 +23,7 @@ class ItemsView(APIView):
         return Response(serializer.errors, status=400)
 
 class ItemDetailView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, id):
         try:
             item = Item.objects.get(id=id)
