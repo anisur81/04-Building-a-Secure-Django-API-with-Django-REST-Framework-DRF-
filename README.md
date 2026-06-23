@@ -303,13 +303,13 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/token/refresh/" `
 
 | Method | Endpoint | Description | Authentication |
 |--------|----------|-------------|----------------|
-| POST | `/api/token/` | Get JWT access & refresh tokens | No |
-| POST | `/api/token/refresh/` | Refresh expired access token | No |
-| GET | `/api/items/` | List all items | Optional |
-| POST | `/api/items/` | Create new item | Optional |
-| GET | `/api/items/{id}/` | Get item by ID | Optional |
-| PUT | `/api/items/{id}/` | Update item by ID | Optional |
-| DELETE | `/api/items/{id}/` | Delete item by ID | Optional |
+| POST | `/api/token/` | Get JWT access & refresh tokens | Yes |
+| POST | `/api/token/refresh/` | Refresh expired access token | Yes |
+| GET | `/api/items/` | List all items | Yes |
+| POST | `/api/items/` | Create new item | Yes |
+| GET | `/api/items/{id}/` | Get item by ID | Yes |
+| PUT | `/api/items/{id}/` | Update item by ID | Yes |
+| DELETE | `/api/items/{id}/` | Delete item by ID | Yes |
 
 ---
 
